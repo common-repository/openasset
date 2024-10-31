@@ -1,0 +1,358 @@
+
+
+.oa-container {
+	.oa-team-member-projects-heading {
+		color:rgba(1, 0, 46, 1);
+	}
+
+	.padding-left-40 {
+		padding-left: 40px;
+		@media screen and (max-width: 767px) {
+			padding-left: calc(var(--bs-gutter-x)*.5);
+		}
+	}
+	.padding-right-40 {
+		padding-right: 40px;
+		@media screen and (max-width: 767px) {
+			padding-right: inherit;
+		}
+	}
+	
+	&.project-template {
+		padding-top: 36px;
+		padding-left: 50px;
+		padding-right: 50px;
+		@media screen and (max-width: 767px) {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+	}
+	&.employee-template {
+		padding-top: 50px;
+	}
+	.smaller-text {
+		font-size: 0.9rem;
+	}
+
+	h1 {
+		font-size: 3.5rem;
+		margin-bottom: 0;
+	}
+
+	.oa-description {
+		margin: 20px 0;
+		font-size: 1rem;
+		line-height: 24px;
+		font-weight: 300;
+		color: #212529;
+		font-family: "Inter", sans-serif;
+	}
+
+	.oa-title {
+		h1 {
+			font-size: 36px;
+			line-height: 44px;
+			color:rgba(1, 0, 46, 1);
+		}
+	}
+
+	.oa-details {
+		margin-top: 43px;
+
+		@media (max-width: 767.98px) {
+			margin-top: 3rem;
+			border-top: 1px solid $gray;
+		}
+
+		.oa-detail-pair {
+			border-bottom: 1px solid $gray;
+			p {
+				color: rgba(1, 0, 46, 1);
+				font-size: 16px;
+				line-height: 21px;
+				&:first-child {
+					color: rgba(1, 0, 46, 0.6);
+					margin-top: 1rem;
+					font-size: 14px;
+					margin-bottom: 5px;
+					@media (max-width: 575.98px) {
+						margin-bottom: 0;
+					}
+				}
+			}
+
+			a {
+				color: black;
+			}
+
+			.keyword-list {
+				margin-bottom: 1rem;
+			}
+			@media (max-width: 767.98px) {
+				display: flex;
+				padding: 1rem 0;
+				p {
+					margin: 0;
+					&:first-child {
+						margin-top: 0;
+						flex-basis: 40%;
+					}
+				}
+				.keyword-list {
+					flex-basis: 60%;
+					margin-bottom: 0;
+				}
+			}
+			@media (max-width: 575.98px) {
+				display: block;
+				p {
+					margin-bottom: initial;
+				}
+			}
+		}
+	}
+
+	.oa-team-member-projects,
+	.oa-team {
+		margin-top: 50px;
+
+		h2 {
+			margin-bottom: 20px;
+		}
+
+		@media (max-width: 767.98px) {
+			margin-top: 3rem;
+		}
+		@media (max-width: 575.98px) {
+			margin-top: 2rem;
+		}
+
+		.oa-projects-container,
+		.oa-team-container {
+			@media (max-width: 767.98px) {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+
+				.oa-project,
+				.oa-team-member {
+					flex-basis: 50%;
+					&:nth-child(odd):nth-last-child(2) {
+						border-bottom: none;
+					}
+				}
+			}
+			@media (max-width: 575.98px) {
+				display: block;
+
+				.oa-project,
+				.oa-team-member {
+					flex-basis: 100%;
+					&:nth-child(odd):nth-last-child(2) {
+						border-bottom: 1px solid $gray;
+					}
+				}
+			}
+		}
+
+		.oa-project,
+		.oa-team-member {
+			&:first-child {
+				padding-top: 0;
+			}
+			padding: 12px 0;
+			border-bottom: 1px solid $gray;
+			display: flex;
+			gap: 1rem;
+			align-items: center;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			.oa-project-image,
+			.oa-team-member-image {
+				flex-basis: 20%;
+				flex-shrink: 0;
+				figure {
+					margin: 0;
+					border-radius: 8px;
+					overflow: hidden;
+
+					a {
+						img {
+							border-radius: 8px;
+							aspect-ratio: 1 / 1;
+						}
+					}
+				}
+			}
+
+			
+
+			.oa-project-details,
+			.oa-team-member-details {
+				a {
+					color: black;
+					text-decoration: none;
+
+					p {
+						color: rgba(1, 0, 46, 1);
+					}
+				}
+				p {
+					margin: 0;
+				}
+				> p:not(:first-child) {
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+
+	.oa-footer {
+		width: 100%;
+		border-top: 1px solid $gray;
+		padding: 4rem 0;
+		margin: 4rem 0;
+
+		.oa-btn {
+			background-color: #e7e7e7;
+			border-radius: 5px;
+			font-size: 0.8rem;
+		}
+	}
+}
+
+.type-oa-project {
+	.smaller-text {
+		font-size: 0.9rem;
+	}
+
+	.oa-hero-image {
+		img {
+			height: 450px;
+			width: 100%;
+			object-fit: cover;
+			border-radius: 12px;
+			margin-top: 50px;
+		}
+	}
+
+	.oa-container {
+		.oa-gallery {
+			column-count: 2; /* Adjust the number of columns based on your design */
+			column-gap: 1em; /* Adjust the gap between the images */
+
+			.oa-gallery-image-link {
+				position: relative;
+				transition: all 0.2s ease-in-out;
+
+				&:hover::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.7); /* Black background with 70% opacity */
+				transition: all 0.2s ease-in-out;
+			}
+			&:hover::after {
+				content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><g id="Group_5113" data-name="Group 5113" transform="translate(-5035.26 1579.512)"><path id="Line_42" data-name="Line 42" d="M1.43,45.255A1.43,1.43,0,0,1,.419,42.813L42.813.419a1.43,1.43,0,1,1,2.023,2.023L2.442,44.836A1.426,1.426,0,0,1,1.43,45.255Z" transform="translate(5035.26 -1547.512) rotate(-45)" fill="%23fff"/><path id="Line_42-2" data-name="Line 42" d="M1.431,45.243A1.431,1.431,0,0,1,.419,42.8L42.8.419a1.431,1.431,0,0,1,2.023,2.023L2.442,44.824A1.426,1.426,0,0,1,1.431,45.243Z" transform="translate(5067.26 -1579.504) rotate(45)" fill="%23fff"/></g></svg>'); /* Path to your white arrow SVG */
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%); /* Centers the SVG */
+				pointer-events: none; /* Ensures the SVG doesn't interfere with click events */
+				transition: all 0.2s ease-in-out;
+			}
+			}
+
+			.oa-gallery-image {
+				break-inside: avoid; /* This prevents items from being split across columns */
+				margin-bottom: 1em; /* Adjust the space between the items */
+				border-radius: 12px;
+				overflow: hidden;
+
+				img {
+
+					width: 100%; /* Make the images responsive to their containers */
+					height: auto;
+					display: block; /* Remove extra space below the image */
+					border-radius: 12px;
+				}
+			}
+
+			@media (max-width: 767.98px) {
+				margin-top: 3rem;
+			}
+
+			@media (max-width: 575.98px) {
+				column-count: 1;
+			}
+		}
+
+		.oa-details {
+			margin-top: 0;
+		}
+	}
+}
+
+.oa-team:has(.oa-team-container:empty) {
+	display: none;
+}
+
+.oa-team-member-projects:has(.oa-projects-container:empty) {
+	display: none;
+}
+
+.type-oa-employee {
+	.smaller-text {
+		font-size: 0.9rem;
+	}
+
+	.oa-container {
+		// border-top: 1px solid $gray;
+
+		@media (max-width: 767.98px) {
+			padding-top: 2rem;
+		}
+		h1 {
+			line-height: 0.8;
+
+			@media (max-width: 767.98px) {
+				margin-top: 2rem;
+			}
+		}
+
+		.oa-job-title {
+			margin-top: 12px;
+			p {
+				margin-bottom: 0;
+				font-size: 28px;
+				line-height: 34px;
+				color: rgba(1, 0, 46, 0.6);
+				font-weight: 400;
+			}
+		
+		}
+
+		.oa-description {
+			margin: 36px 0 50px 0;
+		}
+
+		.oa-profile-image {
+			img {
+				max-width: 520px; /* Makes it square */
+				overflow: hidden; /* Ensures that the image won't spill out of the square boundaries */
+				border-radius: 8px;
+				width: 100%;
+				height: 100%;
+				object-fit: cover; /* This will ensure the image covers the full width/height of its container */
+				object-position: center; /* Centers the image within its container */
+				aspect-ratio: 1 / 1;
+			}
+		}
+	}
+}

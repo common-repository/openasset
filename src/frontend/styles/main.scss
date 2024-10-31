@@ -1,0 +1,10 @@
+.single-oa-project,
+.type-oa-project,
+.single-oa-employee,
+.type-oa-employee {
+	@import "bootstrap";
+}
+@import "modules/global";
+@import "modules/archive";
+@import "modules/keyword-filters";
+@import "modules/single";

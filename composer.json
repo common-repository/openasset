@@ -1,0 +1,36 @@
+{
+	"name": "openasset/openasset",
+	"description": "Power your AEC company website Project Portfolio and Team pages from your centralized data in OpenAsset",
+	"type": "wordpress-plugin",
+	"author": "OpenAsset",
+	"license": "GPL v2 or later",
+	"autoload": {
+		"psr-4": {
+			"OpenAsset\\": "includes/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"OpenAsset\\Tests\\": "tests"
+		}
+	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.7",
+		"phpunit/phpunit": "^11.1",
+		"composer/installers": "^2.2",
+		"bamarni/composer-bin-plugin": "^1.8"
+	},
+	"config": {
+		"allow-plugins": {
+			"bamarni/composer-bin-plugin": true,
+			"composer/installers": true,
+			"automattic/jetpack-autoloader": true
+		}
+	},
+	"require": {
+		"php": "^8.0",
+		"automattic/jetpack-autoloader": "^3.0",
+		"automattic/jetpack-assets": "^2.1",
+		"automattic/jetpack-plugins-installer": "^0.4"
+	}
+}

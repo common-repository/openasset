@@ -1,0 +1,264 @@
+.oa-container {
+	padding-top: 2rem;
+	&> header {
+		display: flex;
+		margin-bottom: 2rem;
+		transition: all 0.2s ease-in-out;
+		flex-direction: column;
+    	gap: 1rem;
+
+		@include md {
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: center;
+		}
+
+		a:has(.oa-btn) {
+			@include md {
+				order: -1;
+				margin-bottom: 1rem;
+
+				.oa-btn {
+					font-size: 0.7rem;
+				}
+			}
+		}
+		.oa-btn {
+			background-color: #e7e7e7;
+			border-radius: 5px;
+			font-size: 0.8rem;
+		}
+
+		.oa-headings {
+			display: flex;
+			gap: 2rem;
+			@include md {
+				gap: 1rem;
+			}
+
+			h2 {
+				font-size: 3rem;
+				color: #000;
+				font-weight: 700;
+				transition: all 0.2s ease-in-out;
+
+				@include lg {
+					font-size: 2rem;
+				}
+				@include md {
+					font-size: 1.8rem;
+				}
+				@include sm {
+					font-size: 1.5rem;
+				}
+			}
+
+			
+
+			a {
+				text-decoration: none;
+				&.inactive {
+					h2 {
+						color: #ccc;
+						
+
+						&:hover {
+							color: #000;
+						}
+					}
+				}
+			}
+
+		}
+
+		form {
+			@include md {
+				width: 100%;
+			}
+			label {
+				width: 100%;
+				.search-field {
+					width: 100%;
+					background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23000" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>');
+					background-repeat: no-repeat;
+					background-position: 10px center; /* Adjust this value as needed */
+					padding: 6px 30px 6px 35px; /* Add padding to make space for the SVG */
+					color: #000; /* Text color */
+					background-color: rgba(0, 1, 142, 0.05);
+					border: none;
+					border-radius: 8px;
+					font-size: 14px;
+					width: 100%;
+					@include md {
+						width: 100%;
+					}
+					&:focus {
+						outline: none;
+					}
+					&::placeholder {
+						color: rgba(1, 0, 46, 0.4);
+; /* Placeholder text color */
+					}
+				}
+
+				
+				// Change default clear x button
+				input[type="search"]::-webkit-search-cancel-button {
+					-webkit-appearance: none;
+					appearance: none;
+				}
+
+				/* For Mozilla Firefox */
+				input[type="search"]::-moz-search-clear-button {
+					display: none;
+				}
+
+				/* General rule for all browsers (as a fallback) */
+				input[type="search"]::after {
+					content: none;
+				}
+
+				.custom-input {
+					position: relative;
+					display: inline-block;
+
+					.clear-search {
+						content: ''; /* Necessary for pseudo-elements */
+						position: absolute;
+						right: 10px; /* Adjust as needed */
+						top: 50%; /* Center vertically */
+						transform: translateY(-50%);
+						width: 20px; /* Adjust as needed */
+						height: 20px; /* Adjust as needed */
+						background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17"><g id="Group_5088" data-name="Group 5088" transform="translate(-1033 -357)"><g id="Group_5087" data-name="Group 5087" transform="translate(4)"><line id="Line_195" data-name="Line 195" x2="5" y2="5" transform="translate(1035 363)" fill="none" stroke="%231f1f1f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/><line id="Line_196" data-name="Line 196" y1="5" x2="5" transform="translate(1035 363)" fill="none" stroke="%231f1f1f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/></g><g id="Ellipse_1" data-name="Ellipse 1" transform="translate(1033 357)" fill="none" stroke="%231f1f1f" stroke-width="1"><circle cx="8.5" cy="8.5" r="8.5" stroke="none"/><circle cx="8.5" cy="8.5" r="8" fill="none"/></g></g></svg>'); /* Path to your custom SVG icon for clearing the input */
+						background-size: cover;
+						cursor: pointer;
+					}
+
+					&.hide-icon .clear-search {
+						display: none;
+					}
+				}
+			}
+		}
+
+		
+	}
+
+	.oa-wide-border {
+		position: relative; /* Ensure the container is positioned relatively */
+		padding-bottom: 2rem;
+	}
+
+	.oa-wide-border::before {
+		content: "";
+		position: absolute;
+		left: 50%;
+		width: 100vw; /* Full viewport width */
+		height: 1px;
+		background-color: #dee2e6;
+		transform: translateX(-50%); /* Center it */
+	}
+
+	.project-grid,
+	.employee-grid {
+		row-gap: 20px;
+	}
+
+
+	.type-oa-project {
+		height: fit-content;
+		.post-thumbnail {
+			a {
+				img {
+					aspect-ratio: 10 / 7;
+				}
+			}
+		}
+
+		.project-grid-heading {
+			font-size: 14px;
+			line-height: 17px;
+			margin-left: 6px;
+		}
+
+		.project-grid-subheading {
+			font-size: 12px;
+			line-height: 15px;
+			margin-left: 6px;
+			margin-bottom: 0;
+			color: rgba(1, 0, 46, 0.6);
+
+		}
+	}
+
+	.type-oa-employee {
+		.post-thumbnail {
+			a {
+				img {
+					aspect-ratio: 1 / 1;
+				}
+			}
+		}
+
+		.employee-grid-heading {
+			font-size: 14px;
+			line-height: 17px;
+			margin-left: 6px;
+		}
+
+		.employee-grid-subheading {
+			font-size: 12px;
+			line-height: 15px;
+			margin-left: 6px;
+			margin-bottom: 0;
+			color: rgba(1, 0, 46, 0.6);
+		}
+	}
+
+	.post-thumbnail {
+		border-radius: 1rem;
+		overflow: hidden;
+		width: fit-content;
+		margin: 0 0 8px;
+		@include md {
+			margin: 0 auto 1rem auto;
+		}
+		
+		a {
+			display: block; /* Makes the anchor fill the figure */
+			position: relative;
+			transition: all 0.2s ease-in-out;
+			overflow: hidden;
+
+			&:hover::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.7); /* Black background with 70% opacity */
+				transition: all 0.2s ease-in-out;
+			}
+			&:hover::after {
+				content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="32.001" height="32.001" viewBox="0 0 32.001 32.001"><g id="Group_80" data-name="Group 80" transform="translate(-186.745 -464)"><path id="Path_1" data-name="Path 1" d="M-2467.171,323a1.01,1.01,0,0,1-1.017-1.012V293.023h-28.963a1.014,1.014,0,0,1-1.017-1.012,1.014,1.014,0,0,1,1.017-1.011h29.979a1.012,1.012,0,0,1,1,1.011v29.977A1.012,1.012,0,0,1-2467.171,323Z" transform="translate(2684.913 173)" fill="%23fff"/><path id="Line_42" data-name="Line 42" d="M.012,31A1.009,1.009,0,0,1-.7,30.7a1.012,1.012,0,0,1,0-1.431L29.274-.7A1.012,1.012,0,0,1,30.7.727L.727,30.7A1.009,1.009,0,0,1,.012,31Z" transform="translate(187.745 465)" fill="%23fff"/></g></svg>'); /* Path to your white arrow SVG */
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%); /* Centers the SVG */
+				pointer-events: none; /* Ensures the SVG doesn't interfere with click events */
+				transition: all 0.2s ease-in-out;
+			}
+			img {
+				max-width: 300px;/* Makes it square */
+				overflow: hidden; /* Ensures that the image won't spill out of the square boundaries */
+				width: 100%;
+				height: 100%;
+				object-fit: cover; /* This will ensure the image covers the full width/height of its container */
+				object-position: center; /* Centers the image within its container */
+				border-radius: 1rem;
+			}
+		}
+	}
+}
